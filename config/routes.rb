@@ -17,4 +17,7 @@ Rails.application.routes.draw do
 
   # GET /about-us (name of the route is "about")
   get "about-us", to: "about#index", as: :about
+
+  get "sign-up", to: "registrations#new"
+  post "sign-up", to: "registrations#create"
 end

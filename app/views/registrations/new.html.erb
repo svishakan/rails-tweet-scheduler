@@ -1,0 +1,19 @@
+<h1>Sign Up</h1>
+
+<%= form_with mode: @user, url: sign_up_path do |form| %>
+    <div class="mb-3">
+        <%= form.label :email %>
+        <%= form.text_field :email, class: "form-control", placeholder: "gavin@hooli.com" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :password %>
+        <%= form.password_field :password, class: "form-control", placeholder: "PiedPiper@123" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "PiedPiper@123" %>
+    </div>
+    <div class="mb-3">
+        <%= form.submit "Get started!", class: "btn btn-primary" %>
+    </div>
+<% end %>
