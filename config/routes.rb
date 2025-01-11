@@ -35,4 +35,8 @@ Rails.application.routes.draw do
   patch "password/reset/edit", to: "password_resets#update"
 
   get "/auth/twitter/callback", to: "omniauth_callbacks#twitter"
+
+  # Creates CRUD routes for TwitterAccounts
+  resources :twitter_accounts
+  resources :tweets
 end

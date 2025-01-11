@@ -1,0 +1,23 @@
+<%= form_with model: tweet do |form| %>
+    <%= render partial: "layouts/shared/form_errors", locals: { form: form } %>
+
+    <div class="mb-3">
+        <%= form.label :twitter_account_id, class: "form-label" %>
+        <%= form.collection_select :twitter_account_id, Current.user.twitter_accounts, :id, :username, { prompt: "Choose an account to Tweet from" }, { class: "form-select" } %>
+        <!-- This button functionality is disabled for now, as it messes with the Submit button, likely a Hotwire issue -->
+        <!-- <%= button_to "Link another X account", "/auth/twitter", method: :post, data: { "turbo": false }, class: "btn btn-primary btn-sm mt-2" %> -->
+    </div>
+    <div class="mb-3">
+        <%= form.label :body, class: "form-label" %>
+        <%= form.text_area :body, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :publish_at %>
+        <div class="form-control">
+            <%= form.datetime_select :publish_at %>
+        </div>
+    </div>
+    <div class="mb-3">
+        <%= form.submit "Schedule Tweet", class: "btn btn-primary" %>
+    </div>
+<% end %>
