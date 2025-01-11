@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   # GET /about-us (name of the route is "about")
   get "about-us", to: "about#index", as: :about
 
+  # GET shows the form ("new"), POST creates the record ("create")
   get "sign-up", to: "registrations#new"
   post "sign-up", to: "registrations#create"
+  get "sign-in", to: "sessions#new"
+  post "sign-in", to: "sessions#create"
+  delete "logout", to: "sessions#destroy"
+
+  get "password", to: "passwords#edit", as: :edit_password
+  patch "password", to: "passwords#update"
 end
