@@ -1,5 +1,5 @@
 class TwitterAccount < ApplicationRecord
-  has_many :tweets
+  has_many :tweets, dependent: :destroy # If a TwitterAccount is deleted, delete all associated Tweets
   belongs_to :user
 
   validates :username, uniqueness: true
