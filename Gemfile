@@ -67,3 +67,7 @@ gem "omniauth-rails_csrf_protection", "~> 1.0"
 
 
 gem "x", "~> 0.14.1"
+
+gem "sidekiq", "~> 7.3"
+
+gem "byebug", "~> 11.1"
